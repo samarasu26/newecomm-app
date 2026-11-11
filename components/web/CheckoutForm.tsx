@@ -13,9 +13,9 @@ export default function CheckoutForm({ documentId, price }: CheckoutFormProps) {
 
   return (
     <form
-      action={(formData) => {
+      action={() => {
         startTransition(() => {
-          createCheckoutSession(formData)
+          createCheckoutSession()
         })
       }}
     >

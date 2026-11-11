@@ -4,18 +4,31 @@
 // Get a free hosted Postgres database in seconds: `npx create-db`
 
 generator client {
+<<<<<<< HEAD
   provider   =  "prisma-client-js"
   
   previewFeatures = ["driverAdapters"]
 }
 
 
+=======
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma/client"
+}
+
+>>>>>>> a2eca1b9ba600b7ee75eebb35e9b2b4cbd37da43
 datasource db {
   provider = "postgresql"
 }
 
+<<<<<<< HEAD
 model User {
   id            String     @id
+=======
+
+model User {
+  id            String    @id
+>>>>>>> a2eca1b9ba600b7ee75eebb35e9b2b4cbd37da43
   name          String
   email         String
   emailVerified Boolean
@@ -24,10 +37,20 @@ model User {
   updatedAt     DateTime
   sessions      Session[]
   accounts      Account[]
+<<<<<<< HEAD
   posts         Post[]
   orders        Order[]
   documents     Document[]
   purchases     Purchase[]
+=======
+  stripeCustomerId   String?   @unique 
+  subscriptionStatus String?            
+  stripePriceId      String?      
+
+  role Role @default(USER)
+
+  
+>>>>>>> a2eca1b9ba600b7ee75eebb35e9b2b4cbd37da43
 
   @@unique([email])
   @@map("user")
@@ -63,10 +86,17 @@ model Account {
   password              String?
   createdAt             DateTime
   updatedAt             DateTime
+<<<<<<< HEAD
 
   @@map("account")
 }
 
+=======
+  @@map("account")
+}
+
+
+>>>>>>> a2eca1b9ba600b7ee75eebb35e9b2b4cbd37da43
 model Verification {
   id         String    @id
   identifier String
@@ -78,17 +108,21 @@ model Verification {
   @@map("verification")
 }
 
+<<<<<<< HEAD
 enum MediaType {
   IMAGE
   VIDEO
   TEXT
 }
 
+=======
+>>>>>>> a2eca1b9ba600b7ee75eebb35e9b2b4cbd37da43
 enum Role {
   USER
   ADMIN
 }
 
+<<<<<<< HEAD
 model Post {
   id        Int       @id
   title     String
@@ -199,3 +233,6 @@ model Purchase {
 
   @@index([userId, postId]) // Optimize dashboard lookups
 }
+=======
+
+>>>>>>> a2eca1b9ba600b7ee75eebb35e9b2b4cbd37da43

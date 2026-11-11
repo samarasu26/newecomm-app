@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 "use client"
 
 import React from 'react'
@@ -7,6 +8,13 @@ import Link from "next/link"
 import { Button } from "../ui/button"
 
 import {useSession, signOut}  from "@/lib/auth-client"
+=======
+
+import {Button}  from "@/components/ui/button"
+import Link   from "next/link"
+
+
+>>>>>>> a2eca1b9ba600b7ee75eebb35e9b2b4cbd37da43
 
 
 
@@ -19,7 +27,10 @@ import {useSession, signOut}  from "@/lib/auth-client"
 const Navbar = () => {
 
 
+<<<<<<< HEAD
     const {data : session}  = useSession()
+=======
+>>>>>>> a2eca1b9ba600b7ee75eebb35e9b2b4cbd37da43
 
 
 
@@ -30,6 +41,7 @@ const Navbar = () => {
   return (
 
 
+<<<<<<< HEAD
     <div className =  "flex justify-between w-full max-w-7xl px-4">
 
     <div className = "">
@@ -83,6 +95,58 @@ const Navbar = () => {
 
 
     </div>
+=======
+    <div className = "flex justify-between p-4">
+
+    <div>
+
+    <Link href = "/">
+
+    Home
+
+    </Link>
+
+    </div>
+
+    
+
+
+    <div>
+
+    <Link href = "/sign-in">
+    
+    <Button>
+      
+      
+      SignIn
+
+        
+    </Button>
+
+    </Link>
+
+
+    <Link href = "/sign-up">
+    
+    <Button>
+      
+      
+      SignUp
+
+        
+    </Button>
+
+    </Link>
+
+
+    </div>
+
+    
+        
+        
+        
+    
+>>>>>>> a2eca1b9ba600b7ee75eebb35e9b2b4cbd37da43
     
     
     

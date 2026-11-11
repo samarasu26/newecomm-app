@@ -1,19 +1,33 @@
 ---
 name: prisma-cli
+<<<<<<< HEAD
 description: Prisma ORM CLI commands reference covering init, generate, migrate, db, dev, studio, validate, format, debug, and mcp. Use for ORM/database CLI workflows, not Prisma Compute app deployment. For Prisma Compute, `@prisma/cli app deploy`, `compute:deploy`, `create-prisma --deploy`, apps, deployments, logs, or domains, use the `prisma-compute` skill instead. Triggers on "prisma init", "prisma generate", "prisma migrate", "prisma db", "prisma studio", "prisma mcp".
 license: MIT
 metadata:
   author: prisma
   version: "7.6.0"
+=======
+description: Prisma ORM CLI commands reference covering init, generate, migrate, db, dev, complete, studio, validate, format, debug, and mcp. Use for ORM/database CLI workflows, not the Prisma Platform CLI. Triggers on "prisma init", "prisma generate", "prisma migrate", "prisma db", "prisma complete", "prisma studio", "prisma mcp".
+license: MIT
+metadata:
+  author: prisma
+  version: "7.9.1"
+>>>>>>> a2eca1b9ba600b7ee75eebb35e9b2b4cbd37da43
 ---
 
 # Prisma CLI Reference
 
 Reference for Prisma ORM CLI commands. This skill provides guidance on command usage, options, and best practices for current Prisma ORM releases.
 
+<<<<<<< HEAD
 ## Boundary: Compute
 
 Do not use this skill for Prisma Compute app deployment. Use `prisma-compute` for `@prisma/cli app deploy`, `compute:deploy`, `create-prisma --deploy`, Compute apps, deployments, logs, domains, and framework deploy readiness.
+=======
+## Boundary: Platform and Compute
+
+Do not confuse the stable ORM command (`prisma`) with the public-beta Platform package (`@prisma/cli`, binary `prisma-cli`). Use `prisma-compute` for Compute apps and workspace auth, and `prisma-postgres` for Platform projects and databases.
+>>>>>>> a2eca1b9ba600b7ee75eebb35e9b2b4cbd37da43
 
 ## When to Apply
 
@@ -24,6 +38,10 @@ Reference this skill when:
 - Managing database state (`prisma db push/pull`)
 - Using local development database (`prisma dev`)
 - Debugging Prisma issues (`prisma debug`)
+<<<<<<< HEAD
+=======
+- Generating shell completions (`prisma complete`)
+>>>>>>> a2eca1b9ba600b7ee75eebb35e9b2b4cbd37da43
 
 ## Rule Categories by Priority
 
@@ -34,19 +52,31 @@ Reference this skill when:
 | 3 | Development | HIGH | `dev` |
 | 4 | Database | HIGH | `db-` |
 | 5 | Migrations | CRITICAL | `migrate-` |
+<<<<<<< HEAD
 | 6 | Utility | MEDIUM | `studio`, `validate`, `format`, `debug`, `mcp` |
+=======
+| 6 | Utility | MEDIUM | `complete`, `studio`, `validate`, `format`, `debug`, `mcp` |
+>>>>>>> a2eca1b9ba600b7ee75eebb35e9b2b4cbd37da43
 
 ## Command Categories
 
 | Category | Commands | Purpose |
 |----------|----------|---------|
+<<<<<<< HEAD
 | Setup | `init` | Bootstrap new Prisma project |
+=======
+| Setup | `init` | Initialize a Prisma project |
+>>>>>>> a2eca1b9ba600b7ee75eebb35e9b2b4cbd37da43
 | Generation | `generate` | Generate Prisma Client |
 | Validation | `validate`, `format` | Schema validation and formatting |
 | Development | `dev` | Local Prisma Postgres for development |
 | Database | `db pull`, `db push`, `db seed`, `db execute` | Direct database operations |
 | Migrations | `migrate dev`, `migrate deploy`, `migrate reset`, `migrate status`, `migrate diff`, `migrate resolve` | Schema migrations |
+<<<<<<< HEAD
 | Utility | `studio`, `mcp`, `version`, `debug` | Development and AI tooling |
+=======
+| Utility | `complete`, `studio`, `mcp`, `version`, `debug` | Shell, development, and AI tooling |
+>>>>>>> a2eca1b9ba600b7ee75eebb35e9b2b4cbd37da43
 
 ## Quick Reference
 
@@ -66,6 +96,10 @@ prisma init --db
 
 # Initialize with an example model
 prisma init --with-model
+<<<<<<< HEAD
+=======
+
+>>>>>>> a2eca1b9ba600b7ee75eebb35e9b2b4cbd37da43
 ```
 
 ### Client Generation
@@ -178,8 +212,27 @@ prisma validate
 
 # Format schema
 prisma format
+<<<<<<< HEAD
 ```
 
+=======
+
+# Generate shell completion code
+prisma complete zsh
+```
+
+## AI Safety Checkpoint
+
+Prisma blocks destructive commands when it detects an AI agent until the agent has obtained explicit user consent. This covers `migrate reset`, `db push --force-reset`, and `db push --accept-data-loss`.
+
+- Explain the exact data-loss impact and ask for consent immediately before running the command.
+- Do not infer consent from earlier or unrelated messages.
+- If automation needs the consent variable, set `PRISMA_USER_CONSENT_FOR_DANGEROUS_AI_ACTION` to the user's exact consent message. Do not invent the text.
+- The Prisma MCP server deliberately has no `migrate-reset` tool.
+
+Read `references/agent-safety.md` before any destructive Prisma command.
+
+>>>>>>> a2eca1b9ba600b7ee75eebb35e9b2b4cbd37da43
 ## Current Prisma CLI Setup
 
 ### New Configuration File
@@ -237,6 +290,11 @@ references/migrate-resolve.md - Migration resolution
 references/migrate-diff.md   - Schema diffing
 references/studio.md         - Database GUI
 references/mcp.md            - Prisma MCP server
+<<<<<<< HEAD
+=======
+references/complete.md       - Shell completion generation
+references/agent-safety.md   - AI consent checkpoint for destructive commands
+>>>>>>> a2eca1b9ba600b7ee75eebb35e9b2b4cbd37da43
 references/validate.md       - Schema validation
 references/format.md         - Schema formatting
 references/debug.md          - Debug info

@@ -1,7 +1,7 @@
 "use client"
 
 import { useSession } from "@/lib/auth-client";
-import { PostItem } from "@/lib/docs";
+import { DocItem } from "@/lib/docs";
 import {ProductItem} from "@/lib/products";
 import Link  from "next/link";
 import { Input } from "../ui/input";

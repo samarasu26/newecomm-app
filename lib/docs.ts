@@ -1,5 +1,5 @@
-import { MediaType } from "@/src/generated/prisma/browser";
-import prisma from "./prisma";
+
+import prisma from "@/lib/prisma";
 
 
 
@@ -8,7 +8,8 @@ import prisma from "./prisma";
 
 
 
-export const postSelect = {
+
+export const docSelect = {
   id: true,
   title : true,
   imageUrl: true,  
@@ -32,20 +33,20 @@ export async function getHomePosts() {
 
   
 
-    prisma.post.findMany({
+    // prisma.document.findMany({
 
-      where: ({ mediaType: MediaType.IMAGE } as any),
+    //   where: ({ mediaType: MediaType.IMAGE } as any),
       
-      select: postSelect,
-    }),
+    //   select: docSelect,
+    // }),
 
-    prisma.post.findMany({
+    prisma.document.findMany({
 
 
      where :   ({ mediaType: MediaType.TEXT } as any),
       
       
-      select: postSelect,
+      select: docSelect,
     }),
 
     
@@ -61,7 +62,7 @@ export async function getHomePosts() {
 
 
 /** Type inference from the Prisma select shape */
-export type PostItem = Awaited<
+export type DocItem = Awaited<
   ReturnType<typeof prisma.post.findMany>>[number]
 
   
