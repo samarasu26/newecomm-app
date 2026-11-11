@@ -61,6 +61,9 @@ export async function POST(req: Request) {
         );
       }
 
+   
+
+
       let customerId = user.stripeCustomerId;
       if (!customerId) {
         const customer = await stripe.customers.create({

@@ -164,11 +164,11 @@ export default function BillingDashboard({ user }: BillingDashboardProps) {
               </div>
             </div>
             <button
-              onClick={() => handleBillingAction("price_YOUR_STRIPE_PRICE_ID")}
+              onClick={() => handleBillingAction(process.env.NEXT_PUBLIC_STRIPE_PRICE_ID)}
               disabled={loading !== null}
               className="mt-8 w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-md text-sm font-medium transition-colors disabled:opacity-50"
             >
-              {loading === "price_YOUR_STRIPE_PRICE_ID"
+              {loading === "STRIPE_PRICE_ID"
                 ? "Redirecting..."
                 : "Upgrade to Pro"}
             </button>
