@@ -2,8 +2,11 @@
 
 Use `@prisma/management-api-sdk` for typed API integration with optional OAuth and token refresh.
 
+<<<<<<< HEAD
+=======
 The Platform API evolves independently from Prisma ORM. Inspect the installed package's generated `api.d.ts` for exact paths and request/response shapes.
 
+>>>>>>> a2eca1b9ba600b7ee75eebb35e9b2b4cbd37da43
 ## Priority
 
 HIGH
@@ -27,6 +30,8 @@ const client = createManagementApiClient({ token: process.env.PRISMA_SERVICE_TOK
 const { data: workspaces } = await client.GET('/v1/workspaces')
 ```
 
+<<<<<<< HEAD
+=======
 Check the generated client result before using `data`; typed clients surface HTTP failures separately. Never log a full response from connection/key creation because it may contain one-time credentials.
 
 ## Workspace service tokens
@@ -39,6 +44,7 @@ The typed client exposes routes to list, create, and revoke workspace service to
 
 Creation accepts a display `name`. The response's `data.value` is the complete token and is returned exactly once; transfer it directly to the intended secret store without logging the response. Later list calls return metadata and `valueHint`, not the token value. Treat revocation as destructive and resolve both ids explicitly.
 
+>>>>>>> a2eca1b9ba600b7ee75eebb35e9b2b4cbd37da43
 ## Full SDK (OAuth + refresh)
 
 ```typescript
